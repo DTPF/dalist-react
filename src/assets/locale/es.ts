@@ -69,6 +69,6 @@ const spanishTranslation = {
   cancel: 'Cancelar',
   save: 'Guardar',
   emptyMessage: 'Lista vacía',
-}
+};
 
 export default spanishTranslation;

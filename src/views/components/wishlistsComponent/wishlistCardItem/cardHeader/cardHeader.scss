@@ -1,21 +1,21 @@
-	@import '/src/scss/mixins';
+@import '/src/scss/mixins';
 
-	.wishlist-card-header {
-		background-color: #232f3e93;
-		border-top-right-radius: 5px;
-		border-top-left-radius: 5px;
+.wishlist-card-header {
+  background-color: #232f3e93;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 
-		&__textarea {
-			display: flex;
-			align-items: center;
-			padding: 5px 0;
-			padding-bottom: 6px;
-			font-weight: 500;
-			@include wishlistCardItemTextArea();
-		}
+  &__textarea {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    padding-bottom: 6px;
+    font-weight: 500;
+    @include wishlistCardItemTextArea();
+  }
 
-		&__textarea[contenteditable]:empty::before {
-			content: "Nombre de la lista";
-			color: rgb(218, 218, 218);
-		}
-	}
+  &__textarea[contenteditable]:empty::before {
+    content: 'Nombre de la lista';
+    color: rgb(218, 218, 218);
+  }
+}

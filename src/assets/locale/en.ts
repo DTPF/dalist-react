@@ -37,7 +37,7 @@ const englishTranslation = {
   filterOrder: 'Sort:',
   filterOrderAsc: 'Ascendent',
   filterOrderDesc: 'Descendent',
-    // CreateWishlistComponent
+  // CreateWishlistComponent
   inputPlaceholderCreateWL: 'Add a new list',
 
   // Wishlist - WishlistPage
@@ -53,7 +53,7 @@ const englishTranslation = {
   notes: 'Notes',
   dateLabel: 'Updated:',
 
-    // Guest
+  // Guest
   guestModalTitle: 'Login to have all the functionalities',
   guestModalOnOk: 'Login or register',
   guestModalOnCancel: 'Continue browsing',
@@ -69,6 +69,6 @@ const englishTranslation = {
   cancel: 'Cancel',
   save: 'Save',
   emptyMessage: 'Empty list',
-}
+};
 
 export default englishTranslation;

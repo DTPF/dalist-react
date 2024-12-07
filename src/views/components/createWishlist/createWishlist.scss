@@ -1,14 +1,14 @@
 @import 'scss/_variables.scss';
 
 .create-wishlist {
-	&__input {
-		margin: 20px 0;
-		padding: 0 20px;
+  &__input {
+    margin: 20px 0;
+    padding: 0 20px;
 
-		&--add-wishlist-icon {
-			padding: 0;
-			padding-top: 5px;
-			font-size: 1.5rem;
-		}
-	}
+    &--add-wishlist-icon {
+      padding: 0;
+      padding-top: 5px;
+      font-size: 1.5rem;
+    }
+  }
 }

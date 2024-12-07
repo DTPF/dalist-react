@@ -1,26 +1,26 @@
 @import '/src/scss/variables';
 
 .language {
-	display: flex;
-	padding: 0 !important;
+  display: flex;
+  padding: 0 !important;
 
-	div {
-		display: flex;
-		align-items: center !important;
-		font-size: 1.3rem;
-		padding: 2px 4px !important;
-		height: 22px;
-		cursor: pointer;
+  div {
+    display: flex;
+    align-items: center !important;
+    font-size: 1.3rem;
+    padding: 2px 4px !important;
+    height: 22px;
+    cursor: pointer;
 
-		&:first-child {
-			margin-right: 7px;
-		}
+    &:first-child {
+      margin-right: 7px;
+    }
 
-		&.active,
-		&:hover {
-			background-color: rgb(184, 184, 184);
-			border-radius: 5px;
-			box-shadow: $shadow-elevation-medium;
-		}
-	}
+    &.active,
+    &:hover {
+      background-color: rgb(184, 184, 184);
+      border-radius: 5px;
+      box-shadow: $shadow-elevation-medium;
+    }
+  }
 }

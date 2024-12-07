@@ -24,14 +24,11 @@ export default function App() {
           <ThemeProvider>
             <AppSettingsModalProvider>
               <Toaster />
-              <RouterProvider
-                router={router}
-                fallbackElement={<></>}
-              />
+              <RouterProvider router={router} fallbackElement={<></>} />
             </AppSettingsModalProvider>
           </ThemeProvider>
         </WishlistProvider>
-      </UserProvider >
+      </UserProvider>
     </Auth0Provider>
   );
 }

@@ -2,9 +2,9 @@
 @import '/src/scss/mixins';
 
 .wishlist-card-item {
-	@include wishlistCardItem();
-	overflow: hidden;
-	box-shadow: 0px -1px 14px 0px #232f3e65;
-	background-color: rgb(244, 247, 255);
-	@include fadeIn(200ms)
+  @include wishlistCardItem();
+  overflow: hidden;
+  box-shadow: 0px -1px 14px 0px #232f3e65;
+  background-color: rgb(244, 247, 255);
+  @include fadeIn(200ms);
 }

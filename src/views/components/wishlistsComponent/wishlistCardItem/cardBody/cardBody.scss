@@ -1,58 +1,58 @@
-	.wishlist-card-body {
-		height: 214px;
-		cursor: pointer;
+.wishlist-card-body {
+  height: 214px;
+  cursor: pointer;
 
-		&__item {
-			margin: 5px 8px;
-			white-space: nowrap;
-			font-size: 0.8rem;
-			color: #383838;
-			padding: 2px 3px;
+  &__item {
+    margin: 5px 8px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    color: #383838;
+    padding: 2px 3px;
 
-			div {
-				display: flex;
-				align-items: center;
-				width: 100%;
-				border-radius: 5px;
+    div {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border-radius: 5px;
 
-				svg {
-					font-size: 0.7rem;
-					color: #8b8b8b;
-				}
+      svg {
+        font-size: 0.7rem;
+        color: #8b8b8b;
+      }
 
-				span {
-					overflow: hidden;
-					text-overflow: ellipsis;
-					padding: 3px;
-					max-width: 89%;
-				}
-			}
-		}
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 3px;
+        max-width: 89%;
+      }
+    }
+  }
 
-		&__items-completed {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100px;
-			margin: 0 auto;
-			margin-bottom: 13px;
-			padding: 2px 4px;
-			position: relative;
-			top: 8px;
-			background-color: rgb(222, 222, 222);
-			font-size: 0.7rem;
-			border: 1px solid #656565;
-			border-radius: 10px;
-			color: #3e3e3e;
-			font-weight: 500;
-			box-shadow: 0px 0px 3px 1px #a5a5a52a;
-		}
+  &__items-completed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 13px;
+    padding: 2px 4px;
+    position: relative;
+    top: 8px;
+    background-color: rgb(222, 222, 222);
+    font-size: 0.7rem;
+    border: 1px solid #656565;
+    border-radius: 10px;
+    color: #3e3e3e;
+    font-weight: 500;
+    box-shadow: 0px 0px 3px 1px #a5a5a52a;
+  }
 
-		&__empty-list {
-			text-align: center;
-			padding-top: 20px;
-			font-size: 0.9rem;
-			font-weight: 500;
-			color: #424242;
-		}
-	}
+  &__empty-list {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #424242;
+  }
+}

@@ -1,1 +1,1 @@
-export { default } from './UserSettingsModal'
+export { default } from './UserSettingsModal';

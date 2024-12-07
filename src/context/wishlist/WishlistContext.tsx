@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import initialWishlistState from "./initialWishlistState";
+import { createContext } from 'react';
+import initialWishlistState from './initialWishlistState';
 
 const WishlistContext = createContext(initialWishlistState);
 

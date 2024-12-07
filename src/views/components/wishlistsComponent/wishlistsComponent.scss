@@ -3,117 +3,116 @@
 @import '/src/scss/mixins';
 
 .wishlists-component {
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;
-	margin-top: 20px;
-	padding: 10px;
-	margin-bottom: 100px;
-	max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 100px;
+  max-width: 1500px;
 
-	@media (max-width: $media-breakpoint-down-md) {
-		padding: 10px 0;
-	}
+  @media (max-width: $media-breakpoint-down-md) {
+    padding: 10px 0;
+  }
 
-	&__filters {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 40px;
-		margin: 10px 0;
+  &__filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    margin: 10px 0;
 
+    @media (max-width: $media-breakpoint-down-sm) {
+      padding: 0;
+    }
 
-		@media (max-width: $media-breakpoint-down-sm) {
-			padding: 0;
-		}
+    @media (max-width: $media-breakpoint-down-md) {
+      padding: 0 10px;
+    }
 
-		@media (max-width: $media-breakpoint-down-md) {
-			padding: 0 10px;
-		}
+    @media (max-width: $media-breakpoint-down-lg) {
+      padding: 0 15px;
+    }
 
-		@media (max-width: $media-breakpoint-down-lg) {
-			padding: 0 15px;
-		}
+    &--left-side {
+      display: flex;
+      align-items: center;
 
-		&--left-side {
-			display: flex;
-			align-items: center;
+      &__select {
+        svg {
+          color: $color-primary-light;
+          font-size: 2.1rem;
+          cursor: pointer;
+        }
+      }
+    }
 
-			&__select {
-				svg {
-					color: $color-primary-light;
-					font-size: 2.1rem;
-					cursor: pointer;
-				}
-			}
-		}
+    &--right-side {
+      svg {
+        color: $color-primary-light;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+    }
+  }
 
-		&--right-side {
-			svg {
-				color: $color-primary-light;
-				font-size: 1.8rem;
-				cursor: pointer;
-			}
-		}
-	}
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-	&__items {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+    &--add-item-desktop {
+      @media (max-width: $media-breakpoint-down-md) {
+        display: none;
+      }
+    }
+  }
 
-		&--add-item-desktop {
-			@media (max-width: $media-breakpoint-down-md) {
-				display: none;
-			}
-		}
-	}
+  &__add-item-mobile {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
 
-	&__add-item-mobile {
-		position: fixed;
-		bottom: 70px;
-		right: 20px;
+    svg {
+      font-size: 3rem;
+      color: #ffc271;
+      background-color: #fff;
+      box-shadow: $shadow-elevation-high;
+      border-radius: 50%;
+      outline: none;
+      padding: 0px !important;
+      margin: 0;
+      border: 2px solid #ffc271;
+    }
 
-		svg {
-			font-size: 3rem;
-			color: #FFC271;
-			background-color: #fff;
-			box-shadow: $shadow-elevation-high;
-			border-radius: 50%;
-			outline: none;
-			padding: 0px !important;
-			margin: 0;
-			border: 2px solid #FFC271;
-		}
+    @media (min-width: $media-breakpoint-down-md) {
+      display: none;
+    }
+  }
 
-		@media (min-width: $media-breakpoint-down-md) {
-			display: none;
-		}
-	}
+  &__skeleton {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    max-width: 1450px;
+    margin: 0 auto;
+    margin-top: 95px;
 
-	&__skeleton {
-		display: flex !important;
-		justify-content: center !important;
-		flex-wrap: wrap;
-		max-width: 1450px;
-		margin: 0 auto;
-		margin-top: 95px;
+    div {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      border-radius: 6px !important;
+      margin: 9px 5px !important;
 
-		div {
-			display: flex !important;
-			justify-content: center !important;
-			align-items: center !important;
-			border-radius: 6px !important;
-			margin: 9px 5px !important;
+      div {
+        width: 210px !important;
+        height: 270px !important;
+      }
 
-			div {
-				width: 210px !important;
-				height: 270px !important;
-			}
-
-			@media (max-width: $media-breakpoint-down-sm) {
-				margin: 6px 3px !important;
-			}
-		}
-	}
+      @media (max-width: $media-breakpoint-down-sm) {
+        margin: 6px 3px !important;
+      }
+    }
+  }
 }

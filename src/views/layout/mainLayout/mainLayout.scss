@@ -1,78 +1,77 @@
 @import '/src/scss/variables';
 
 .main-layout {
-	&__sider {
-		min-height: 100vh !important;
-		z-index: 100 !important;
-		position: sticky !important;
-		top: 0 !important;
+  &__sider {
+    min-height: 100vh !important;
+    z-index: 100 !important;
+    position: sticky !important;
+    top: 0 !important;
 
-		&--menu {
-			padding: 0 10px;
-			padding-top: 1px;
+    &--menu {
+      padding: 0 10px;
+      padding-top: 1px;
 
-			li {
-				display: flex;
-				align-items: center;
-				padding: 10px;
-				margin: 5px 0;
-				color: #fff;
-				font-size: 1rem;
-				list-style-type: none;
-				cursor: pointer;
+      li {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin: 5px 0;
+        color: #fff;
+        font-size: 1rem;
+        list-style-type: none;
+        cursor: pointer;
 
-				@media (max-width: $media-breakpoint-down-md) {
-					padding: 12px;
-					padding-top: 12px;
-				}
+        @media (max-width: $media-breakpoint-down-md) {
+          padding: 12px;
+          padding-top: 12px;
+        }
 
-				span {
-					font-size: 1.2rem;
-					padding-right: 8px;
-				}
+        span {
+          font-size: 1.2rem;
+          padding-right: 8px;
+        }
 
-				&:hover {
-					font-weight: 600;
-				}
-			}
+        &:hover {
+          font-weight: 600;
+        }
+      }
 
-			&__top {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 0 10px;
+      &__top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
 
-				&--language {
-					margin: 10px 0 !important;
-					margin-bottom: 20px;
-				}
-			}
-		}
-	}
+        &--language {
+          margin: 10px 0 !important;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
 
-	&__container {
+  &__container {
+    &--header {
+      padding: 0 !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 10;
 
-		&--header {
-			padding: 0 !important;
-			position: sticky !important;
-			top: 0 !important;
-			z-index: 10;
+      &__icon {
+        position: fixed;
+        top: 26px;
+        padding-left: 10px;
+        z-index: 1000 !important;
+        font-size: 2rem;
+        color: #fff;
+      }
+    }
 
-			&__icon {
-				position: fixed;
-				top: 26px;
-				padding-left: 10px;
-				z-index: 1000 !important;
-				font-size: 2rem;
-				color: #fff;
-			}
-		}
-
-		&--footer {
-			position: sticky !important;
-			bottom: 0 !important;
-			padding: 0 !important;
-			z-index: 10;
-		}
-	}
+    &--footer {
+      position: sticky !important;
+      bottom: 0 !important;
+      padding: 0 !important;
+      z-index: 10;
+    }
+  }
 }

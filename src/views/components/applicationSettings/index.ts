@@ -1,1 +1,1 @@
-export { default } from './ApplicationSettings'
+export { default } from './ApplicationSettings';

@@ -1,23 +1,16 @@
-import { useMemo, useState } from 'react'
-import AppSettingsModalContext from './AppSettingsModalContext'
+import { useMemo, useState } from 'react';
+import AppSettingsModalContext from './AppSettingsModalContext';
 
 export default function AppSettingsModalProvider({ children }: any) {
-	const [openSettingsModal, setOpenSettingsModal] = useState(false)
+  const [openSettingsModal, setOpenSettingsModal] = useState(false);
 
-	const memoProvider = useMemo(
-		() => ({
-			openSettingsModal,
-			setOpenSettingsModal,
-		}),
-		[
-			openSettingsModal,
-			setOpenSettingsModal,
-		]
-	);
+  const memoProvider = useMemo(
+    () => ({
+      openSettingsModal,
+      setOpenSettingsModal,
+    }),
+    [openSettingsModal, setOpenSettingsModal]
+  );
 
-	return (
-		<AppSettingsModalContext.Provider value={memoProvider}>
-			{children}
-		</AppSettingsModalContext.Provider>
-	)
+  return <AppSettingsModalContext.Provider value={memoProvider}>{children}</AppSettingsModalContext.Provider>;
 }

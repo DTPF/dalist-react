@@ -1,28 +1,30 @@
-import { useContext, useEffect } from "react";
-import UserContext from "context/user/UserContext";
-import { useTranslation } from "react-i18next";
-import './language.scss'
+import { useContext, useEffect } from 'react';
+import UserContext from 'context/user/UserContext';
+import { useTranslation } from 'react-i18next';
+import './language.scss';
 
 const languages = [
-  { code: "en", native: "🇬🇧" },
-  { code: "es", native: "🇪🇸" },
+  { code: 'en', native: '🇬🇧' },
+  { code: 'es', native: '🇪🇸' },
 ];
 
 const Language = () => {
   const { i18n } = useTranslation();
-  const { dbUser, changeLanguage: changeLanguageAPI } = useContext(UserContext)
+  const { dbUser, changeLanguage: changeLanguageAPI } = useContext(UserContext);
 
   useEffect(() => {
-    let isMounted = true
-    isMounted && i18n.changeLanguage(dbUser.appInfo.language)
-    return () => { isMounted = false }
+    let isMounted = true;
+    isMounted && i18n.changeLanguage(dbUser.appInfo.language);
+    return () => {
+      isMounted = false;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dbUser.appInfo.language])
+  }, [dbUser.appInfo.language]);
 
   const handleTrans = (code: string) => {
-    changeLanguageAPI({ language: code })
+    changeLanguageAPI({ language: code });
     i18n.changeLanguage(code);
-    document.documentElement.setAttribute("lang", code);
+    document.documentElement.setAttribute('lang', code);
   };
 
   return (
@@ -37,10 +39,10 @@ const Language = () => {
           >
             {native}
           </div>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
 export default Language;

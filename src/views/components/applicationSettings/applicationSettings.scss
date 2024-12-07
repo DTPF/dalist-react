@@ -1,14 +1,14 @@
- @import '/src/scss/variables';
- @import '/src/scss/mixins';
+@import '/src/scss/variables';
+@import '/src/scss/mixins';
 
- .application-settings__radio-select-btn {
- 	&:hover {
- 		opacity: 0.9;
- 	}
- }
+.application-settings__radio-select-btn {
+  &:hover {
+    opacity: 0.9;
+  }
+}
 
- .ant-popover-inner {
- 	background-color: red !important;
- 	padding: 0 !important;
- 	border-radius: 5px !important;
- }
+.ant-popover-inner {
+  background-color: red !important;
+  padding: 0 !important;
+  border-radius: 5px !important;
+}

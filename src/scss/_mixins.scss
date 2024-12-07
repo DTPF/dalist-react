@@ -1,33 +1,33 @@
 @import '/src/scss/variables';
 
 @mixin wishlistCardItem {
-	width: 200px;
-	height: 280px;
-	max-height: 300px;
-	margin: 20px;
-	border-radius: 6px;
+  width: 200px;
+  height: 280px;
+  max-height: 300px;
+  margin: 20px;
+  border-radius: 6px;
 
-	@media (max-width: $media-breakpoint-down-xs) {
-		margin: 10px;
-	}
+  @media (max-width: $media-breakpoint-down-xs) {
+    margin: 10px;
+  }
 
-	@media (max-width: $media-breakpoint-down-sm) {
-		margin: 15px;
-	}
+  @media (max-width: $media-breakpoint-down-sm) {
+    margin: 15px;
+  }
 }
 
 @mixin wishlistCardItemTextArea {
-	display: block;
-	color: #fff;
-	width: 190px;
-	margin: 0 auto;
-	min-height: 23px !important;
-	max-height: 120px;
-	overflow: hidden;
-	resize: none;
-	line-height: 20px;
-	text-align: center;
-	outline: none;
-	padding-top: 10px !important;
-	cursor: text;
+  display: block;
+  color: #fff;
+  width: 190px;
+  margin: 0 auto;
+  min-height: 23px !important;
+  max-height: 120px;
+  overflow: hidden;
+  resize: none;
+  line-height: 20px;
+  text-align: center;
+  outline: none;
+  padding-top: 10px !important;
+  cursor: text;
 }

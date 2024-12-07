@@ -10,8 +10,10 @@ export default function useWindowSizeReport() {
   useEffect(() => {
     let isMounted = true;
     isMounted && (window.onresize = reportWindowSize);
-    return () => { isMounted = false }
-  }, [])
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return [innerWidth];
 }

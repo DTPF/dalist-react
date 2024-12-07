@@ -1,36 +1,52 @@
-import { Suspense, lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { Suspense, lazy } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 // Layouts
-const MainLayout = lazy(() => import('views/layout/mainLayout'))
+const MainLayout = lazy(() => import('views/layout/mainLayout'));
 // Pages
-const WishlistPage = lazy(() => import('../views/pages/wishlistPage/WishlistPage'))
-const HomePage = lazy(() => import('views/pages/homePage'))
+const WishlistPage = lazy(() => import('../views/pages/wishlistPage/WishlistPage'));
+const HomePage = lazy(() => import('views/pages/homePage'));
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Suspense fallback={<></>}><MainLayout /></Suspense>,
+    path: '/',
+    element: (
+      <Suspense fallback={<></>}>
+        <MainLayout />
+      </Suspense>
+    ),
     children: [
       {
-        path: "/",
-        element: <Suspense fallback={<></>}><HomePage /></Suspense>,
+        path: '/',
+        element: (
+          <Suspense fallback={<></>}>
+            <HomePage />
+          </Suspense>
+        ),
       },
       {
-        path: "/wishlist",
-        element: <Suspense fallback={<></>}><WishlistPage /></Suspense>,
+        path: '/wishlist',
+        element: (
+          <Suspense fallback={<></>}>
+            <WishlistPage />
+          </Suspense>
+        ),
         children: [
           {
-            path: ":isCompleted",
-            element: <Suspense fallback={<></>}><WishlistPage /></Suspense>,
+            path: ':isCompleted',
+            element: (
+              <Suspense fallback={<></>}>
+                <WishlistPage />
+              </Suspense>
+            ),
           },
-        ]
+        ],
       },
       {
-        path: "*",
-        element: <div>Not found</div>
+        path: '*',
+        element: <div>Not found</div>,
       },
-    ]
-  }
+    ],
+  },
 ]);
 
 export default router;

@@ -1,15 +1,15 @@
 .filter-dropdown-active {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .ant-dropdown-menu {
-	width: 160px;
-	padding: 10px 0 !important;
+  width: 160px;
+  padding: 10px 0 !important;
 
-	li {
-		&:last-child {
-			border-radius: 0 !important;
-			padding: 3px 12px !important;
-		}
-	}
+  li {
+    &:last-child {
+      border-radius: 0 !important;
+      padding: 3px 12px !important;
+    }
+  }
 }

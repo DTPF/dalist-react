@@ -1,37 +1,37 @@
 .user-profile {
-	position: absolute;
-	right: 15px;
-	top: 23px;
-	cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 23px;
+  cursor: pointer;
 
-	img {
-		border-radius: 50%;
-	}
+  img {
+    border-radius: 50%;
+  }
 
-	&__login {
-		position: relative;
-		top: -11px;
-		color: #fff;
-		font-size: 1rem;
-	}
+  &__login {
+    position: relative;
+    top: -11px;
+    color: #fff;
+    font-size: 1rem;
+  }
 
-	&__popover {
-		padding-top: 10px;
+  &__popover {
+    padding-top: 10px;
 
-		div {
-			display: flex;
-			align-items: center;
-			padding: 5px 0;
-			cursor: pointer;
+    div {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+      cursor: pointer;
 
-			&:last-child {
-				padding-bottom: 0;
-			}
+      &:last-child {
+        padding-bottom: 0;
+      }
 
-			svg {
-				font-size: 1rem;
-				padding-right: 5px;
-			}
-		}
-	}
+      svg {
+        font-size: 1rem;
+        padding-right: 5px;
+      }
+    }
+  }
 }

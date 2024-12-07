@@ -30,7 +30,7 @@
     input {
       color: #525252;
       background-color: transparent;
-      font-size: 1.10rem;
+      font-size: 1.1rem;
       width: 95%;
       border: 0;
       font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
@@ -44,7 +44,7 @@
     align-items: center;
 
     &--trash {
-      color: #B20000;
+      color: #b20000;
       font-size: 1.4rem;
       cursor: pointer;
       opacity: 0;
@@ -61,11 +61,11 @@
         &--input {
           display: none;
 
-          &:checked~span {
+          &:checked ~ span {
             box-shadow: $shadow-elevation-medium;
           }
 
-          &:checked~span:after {
+          &:checked ~ span:after {
             opacity: 1;
           }
 
@@ -81,15 +81,15 @@
             font-size: 0.8rem;
 
             &:after {
-              content: "";
+              content: '';
               position: absolute;
-              border: solid #232F3E;
-              border-width: 0 0.250em 0.25em 0;
+              border: solid #232f3e;
+              border-width: 0 0.25em 0.25em 0;
               transform: rotate(45deg);
-              width: 0.40em;
-              height: 0.80em;
+              width: 0.4em;
+              height: 0.8em;
               left: 0.5em;
-              top: 0.20em;
+              top: 0.2em;
               opacity: 0;
               transition: all 0.3s ease;
             }
@@ -113,7 +113,7 @@
 
   .wishlist-item__title {
     span {
-      color: rgb(136, 136, 136)
+      color: rgb(136, 136, 136);
     }
   }
 }

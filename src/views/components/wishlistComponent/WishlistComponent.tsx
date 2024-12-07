@@ -14,77 +14,77 @@ import './wishlistComponent.scss';
 
 export default function WishlistComponent({ params }: any) {
   const { isLoading, currentWishlist, updateWishlist } = useContext(WishlistContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { t: translate } = useTranslation();
-  const { currentThemeColor } = useContext(ThemeContext)
-	const { colorPrimary, colorPrimaryBg } = currentThemeColor
+  const { currentThemeColor } = useContext(ThemeContext);
+  const { colorPrimary, colorPrimaryBg } = currentThemeColor;
 
-  const completedItems =
-    currentWishlist.wishlistItems.filter((item: WishList) => item.isCompleted === true)
+  const completedItems = currentWishlist.wishlistItems.filter((item: WishList) => item.isCompleted === true);
 
-  const activeItems =
-    currentWishlist.wishlistItems.filter((item: WishList) => item.isCompleted === false)
+  const activeItems = currentWishlist.wishlistItems.filter((item: WishList) => item.isCompleted === false);
 
   function getStatus() {
-    if (!params.isCompleted) return currentWishlist.wishlistItems
-    if (params.isCompleted === 'active') return activeItems
-    return completedItems
+    if (!params.isCompleted) return currentWishlist.wishlistItems;
+    if (params.isCompleted === 'active') return activeItems;
+    return completedItems;
   }
 
   const reorder = (list: any, startIndex: any, endIndex: any) => {
-    const result = [...list]
-    const [removed] = result.splice(startIndex, 1)
-    result.splice(endIndex, 0, removed)
-    return result
-  }
+    const result = [...list];
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+    return result;
+  };
 
   const handleOnDragEng = (result: any) => {
-    const { source, destination } = result
-    if (!destination) return
-    if (source.index === destination.index && source.droppableId === destination.droppableId) return
+    const { source, destination } = result;
+    if (!destination) return;
+    if (source.index === destination.index && source.droppableId === destination.droppableId) return;
 
-    const reorderList = reorder(currentWishlist.wishlistItems, source.index, destination.index)
-    let orderedList: any = []
+    const reorderList = reorder(currentWishlist.wishlistItems, source.index, destination.index);
+    let orderedList: any = [];
     reorderList.forEach((item, index) => {
-      item.position = index
-      orderedList.push(item)
+      item.position = index;
+      orderedList.push(item);
     });
-    updateWishlist(currentWishlist._id, { wishlistItems: orderedList })
-  }
+    updateWishlist(currentWishlist._id, { wishlistItems: orderedList });
+  };
 
-  const [itemsLength, setItemsLength] = useState(0)
-  const filteredActive = currentWishlist.wishlistItems.filter((item: any) => item.isCompleted === false)
-  const filteredCompleted = currentWishlist.wishlistItems.filter((item: any) => item.isCompleted === true)
+  const [itemsLength, setItemsLength] = useState(0);
+  const filteredActive = currentWishlist.wishlistItems.filter((item: any) => item.isCompleted === false);
+  const filteredCompleted = currentWishlist.wishlistItems.filter((item: any) => item.isCompleted === true);
 
   useEffect(() => {
     if (params.isCompleted === 'active') {
-      setItemsLength(filteredActive.length)
+      setItemsLength(filteredActive.length);
     } else if (params.isCompleted === 'completed') {
-      setItemsLength(filteredCompleted.length)
+      setItemsLength(filteredCompleted.length);
     } else {
-      setItemsLength(currentWishlist.wishlistItems.length)
+      setItemsLength(currentWishlist.wishlistItems.length);
     }
-    return () => {
-    }
-  }, [currentWishlist.wishlistItems, filteredActive, filteredCompleted, params])
-
+    return () => {};
+  }, [currentWishlist.wishlistItems, filteredActive, filteredCompleted, params]);
 
   return (
     <DragDropContext onDragEnd={(result: any) => handleOnDragEng(result)}>
-      <section className='wishlist-component'>
-        <div className='wishlist-component__home-link'>
-          <Link to={'/'}><ArrowLeftOutlined /></Link>
+      <section className="wishlist-component">
+        <div className="wishlist-component__home-link">
+          <Link to={'/'}>
+            <ArrowLeftOutlined />
+          </Link>
         </div>
-        <div className='wishlist-component__top-bar'>
-          <div className='wishlist-component__top-bar--wishlist-title'>
+        <div className="wishlist-component__top-bar">
+          <div className="wishlist-component__top-bar--wishlist-title">
             <h2
               style={{
                 color: currentWishlist.color,
-                backgroundColor: currentWishlist.backgroundColor
+                backgroundColor: currentWishlist.backgroundColor,
               }}
-            >{currentWishlist.wishlistName}</h2>
+            >
+              {currentWishlist.wishlistName}
+            </h2>
           </div>
-          <div className='wishlist-component__top-bar--select-status'>
+          <div className="wishlist-component__top-bar--select-status">
             {currentWishlist.wishlistItems.length > 0 && (
               <>
                 <Select
@@ -92,13 +92,13 @@ export default function WishlistComponent({ params }: any) {
                   style={{ width: 120 }}
                   onChange={(e) => {
                     if (e === 'active') {
-                      setItemsLength(filteredActive.length)
+                      setItemsLength(filteredActive.length);
                     } else if (e === 'completed') {
-                      setItemsLength(filteredCompleted.length)
+                      setItemsLength(filteredCompleted.length);
                     } else {
-                      setItemsLength(currentWishlist.wishlistItems.length)
+                      setItemsLength(currentWishlist.wishlistItems.length);
                     }
-                    navigate(`/wishlist/${e}`)
+                    navigate(`/wishlist/${e}`);
                   }}
                   options={[
                     { value: '', label: translate('selectStatusAll') },
@@ -106,45 +106,49 @@ export default function WishlistComponent({ params }: any) {
                     { value: 'completed', label: translate('selectStatusComplete') },
                   ]}
                 />
-                <Badge style={{
-                  position: 'absolute',
-                  top: 6,
-                  right: 7,
-                  color: colorPrimary,
-                  backgroundColor: colorPrimaryBg,
-                }} count={itemsLength} />
+                <Badge
+                  style={{
+                    position: 'absolute',
+                    top: 6,
+                    right: 7,
+                    color: colorPrimary,
+                    backgroundColor: colorPrimaryBg,
+                  }}
+                  count={itemsLength}
+                />
               </>
             )}
           </div>
         </div>
         {isLoading ? (
-          <div className='wishlist-component__spinner'>
+          <div className="wishlist-component__spinner">
             <Spinner />
           </div>
         ) : (
           <>
-            <div className='wishlist-component__empty-list-msg'>
+            <div className="wishlist-component__empty-list-msg">
               {getStatus().length === 0 && <div>{translate('emptyMessage')}...</div>}
             </div>
-            <Droppable droppableId='wishlist-cards' direction='vertical'>
+            <Droppable droppableId="wishlist-cards" direction="vertical">
               {(droppableProvided) => (
                 <div
                   ref={droppableProvided.innerRef}
                   {...droppableProvided.droppableProps}
-                  className='wishlist-component__list'>
+                  className="wishlist-component__list"
+                >
                   {getStatus().map((wishlistItem: any) => (
-                    <Draggable key={wishlistItem.position} draggableId={wishlistItem.position.toString()} index={wishlistItem.position}>
+                    <Draggable
+                      key={wishlistItem.position}
+                      draggableId={wishlistItem.position.toString()}
+                      index={wishlistItem.position}
+                    >
                       {(draggableProvided) => (
                         <span
                           {...draggableProvided.draggableProps}
                           ref={draggableProvided.innerRef}
                           {...draggableProvided.dragHandleProps}
-
                         >
-                          <WishlistItem
-                            key={wishlistItem.id}
-                            wishlistItem={wishlistItem}
-                          />
+                          <WishlistItem key={wishlistItem.id} wishlistItem={wishlistItem} />
                         </span>
                       )}
                     </Draggable>
@@ -159,5 +163,5 @@ export default function WishlistComponent({ params }: any) {
         )}
       </section>
     </DragDropContext>
-  )
+  );
 }
